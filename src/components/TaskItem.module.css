@@ -1,0 +1,19 @@
+.tasks {
+  display: grid;
+  list-style-type: none;
+  gap: 1.5em;
+}
+
+/* Add this CSS to your stylesheet or a separate CSS file */
+.largeCheckbox {
+  width: 24px; /* Adjust the width as needed */
+  height: 24px; /* Adjust the height as needed */
+  transform: scale(1.5); /* Adjust the scale factor to control the size */
+  margin-right: 8px; /* Add spacing between the checkbox and the label */
+}
+
+/* Style for the disabled checkbox */
+.largeCheckbox:disabled {
+  cursor: not-allowed; /* Change cursor to indicate it's disabled */
+  opacity: 0.5; /* Reduce opacity to visually indicate it's disabled */
+}

@@ -1,14 +1,23 @@
 import React from "react";
 import TaskItem from "./TaskItem";
-import styles from "./TaskLists.module.css";
 
-function TaskLists({ tasks }) {
+function TaskLists({ tasks, deleteTask, toggleTask, enterEditMode }) {
   return (
-    <ul className={styles.tasks}>
-      {tasks.map((task) => (
-        <TaskItem key={task.id} task={task} />
-      ))}
-    </ul>
+    <div className="d-flex align-items-center w-100">
+      <ul style={{ color: "white" }}>
+        {tasks
+          .sort((a, b) => b.id - a.id)
+          .map((task) => (
+            <TaskItem
+              key={task.id}
+              task={task}
+              deleteTask={deleteTask}
+              toggleTask={toggleTask}
+              enterEditMode={enterEditMode}
+            />
+          ))}
+      </ul>
+    </div>
   );
 }
 
